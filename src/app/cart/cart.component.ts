@@ -11,13 +11,19 @@ import { Cart } from '../user';
 })
 export class CartComponent {
 
-  constructor(private _Prods:ProdService ,private _CartService:CartService ){}
+  constructor(private _Prods:ProdService ,private _CartService:CartService ,private _prod:ProdService ){}
   
   cart!:Array<Cart>;
+  prodDit:Array<object>=[];
+  cartItem :Array<object> = []
+  oneprod !: object;
   ngOnInit()
   {
     this.cart = this._CartService.getCartforuser() ;
-    console.log(this.cart);
+    for(let i of this.cart)
+    {
+     this._prod.oneProd(i.prodid).subscribe((data)=>{ this.oneprod = {data,item:i}  ; this.prodDit.push(this.oneprod); console.log(this.prodDit)})
+    }
 
   }
 
