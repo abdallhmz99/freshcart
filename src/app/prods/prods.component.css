@@ -1,0 +1,17 @@
+.customcard
+{
+    cursor:pointer !important;
+    height: 33vh;
+    box-shadow: 0 0 1rem  rgb(167, 218, 233) ;
+    overflow: hidden;
+    font-size: medium;
+}
+h5{
+    font-size: medium;
+}
+img
+{
+    height:50%;
+    width: 90% ;
+
+}

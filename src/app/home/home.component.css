@@ -1,0 +1,28 @@
+.main {
+    margin-bottom: 2%;
+     background-image: url('../../assets/home-header.jpg');
+     background-color: #4063F3;
+    background-repeat: no-repeat ;
+    background-size: 70% 100%;
+    background-position: center;
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  .main div a:hover {
+    transform: scale(1.25);
+  }
+  
+  .main h1 {
+    font-size: 2.5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: .2rem .2rem .5rem #000505;
+    color: #fff;
+    margin-bottom: 1.5rem;
+  }
+  
