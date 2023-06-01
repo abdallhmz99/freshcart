@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from '../services/user/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -9,7 +10,7 @@ import { UserService } from '../services/user/user.service';
 })
 export class SigninComponent {
 
-  constructor(private userServ:UserService){}
+  constructor(private userServ:UserService,private _router:Router){}
 
   signInForm = new FormGroup({
     Email: new FormControl("example@exampel.com", [Validators.required, Validators.email ]),
@@ -17,8 +18,8 @@ export class SigninComponent {
 
   });
 
-  validationFalse: boolean = false;
-  validationtrue: boolean = false
+  validationFalse!: boolean ;
+  validationtrue!: boolean ;
   signIn() {
     if ((this.signInForm.status == "INVALID")) {
       this.validationFalse = true
@@ -28,7 +29,7 @@ export class SigninComponent {
       this.validationFalse = false
       this.validationtrue = true
       this.userServ.signin(String(this.signInForm.controls.Email.value),String(this.signInForm.controls.password.value))
-
+     // this._router.navigate(['home']);
     }
   }
 

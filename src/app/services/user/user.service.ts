@@ -48,8 +48,9 @@ export class UserService {
   
   login(flag: string) {
     localStorage.setItem('signedin', flag);
-    location.reload();
-  }
+        this.Router.navigate(['home']).then(() => {
+      window.location.reload();});
+    }
   
 
 
@@ -61,6 +62,7 @@ export class UserService {
         if (i.password == password) {
           this.login("true")
           localStorage.setItem('Email', Email)
+          
           break;
         } 
         else { this.login("false") ;}
@@ -75,7 +77,10 @@ export class UserService {
   logout() {
     localStorage.setItem('signedin', "false")
     localStorage.setItem('Email', "")
-    location.reload();
+    
+    this.Router.navigate(['home']).then(() => {
+    window.location.reload();});
+
   }
 
 }
