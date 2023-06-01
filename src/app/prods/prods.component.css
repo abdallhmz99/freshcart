@@ -1,7 +1,8 @@
 .customcard
 {
     cursor:pointer !important;
-    height: 33vh;
+    height: 45vh;
+    width: 20vw;
     box-shadow: 0 0 1rem  rgb(167, 218, 233) ;
     overflow: hidden;
     font-size: medium;

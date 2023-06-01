@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ProdService } from '../services/prods/prod.service';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from '../services/cart/cart.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-proddetails',
@@ -22,7 +22,7 @@ export class ProddetailsComponent {
   addProdToCart=new FormGroup
   (
     {  
-       qunt : new FormControl()
+       qunt : new FormControl("1")
 
     }
 

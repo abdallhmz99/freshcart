@@ -9,7 +9,11 @@ import { CategoriesService } from '../services/categories/categories.service';
 })
 export class ProdsComponent {
 
-  constructor(private _Prods:ProdService ,private _categories:CategoriesService ){}
+  constructor(private _Prods:ProdService ,private _categories:CategoriesService ){if (localStorage.getItem('signedin') == 'true') { this.isLogIN = true }
+  else { this.isLogIN = false }}
+
+  isLogIN: boolean = false
+
 
   prods!:any;
   categories!:any;

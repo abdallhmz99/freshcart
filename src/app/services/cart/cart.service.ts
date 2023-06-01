@@ -24,11 +24,13 @@ export class CartService {
   }
 
   counter:number=0;
+
   addToCart(userEmail: string, prodid: number, qunt: number)  // add prodct to cart
   { this.counter++;                                  // counter to make cart item id unique
     this.getCart();
     this.cart.push({id:this.counter, userEmail, prodid, qunt })
     localStorage.setItem('cart', JSON.stringify(this.cart))
+    alert("item added to cart")
   }
 
   getCartforuser(): Array<Cart>  // get card to loged in user

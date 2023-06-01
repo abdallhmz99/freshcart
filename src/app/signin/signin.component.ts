@@ -29,7 +29,6 @@ export class SigninComponent {
       this.validationFalse = false
       this.validationtrue = true
       this.userServ.signin(String(this.signInForm.controls.Email.value),String(this.signInForm.controls.password.value))
-     // this._router.navigate(['home']);
     }
   }
 
